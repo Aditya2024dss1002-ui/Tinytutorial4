@@ -49,7 +49,7 @@ export const handler = async (event, context) => {
         return {
             statusCode: 201,
             body: JSON.stringify({
-                RideId: rideId,
+                RideID: rideId,
                 Unicorn: unicorn,
                 Eta: '30 seconds',
                 Rider: username,
@@ -71,9 +71,9 @@ function findUnicorn(pickupLocation) {
 
 async function recordRide(rideId, username, unicorn) {
     const params = {
-        TableName: 'Rides',
+        TableName: 'RidesTest',
         Item: {
-            RideId: rideId,
+            RideID: rideId,
             User: username,
             Unicorn: unicorn,
             RequestTime: new Date().toISOString(),
